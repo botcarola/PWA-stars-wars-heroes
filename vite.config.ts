@@ -17,7 +17,7 @@ export default defineConfig({
     },
 
     manifest: {
-      name: 'star-wars-pwa',
+      name: 'Star Wars Characters',
       short_name: 'swp-pwa',
       description: '"Proyecto Star Wars basado en PWA"',
       theme_color: '#ffffff',
