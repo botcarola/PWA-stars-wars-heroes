@@ -11,9 +11,7 @@ const useFetch = ( resource: string, indexPagination: number = 1 ): { data : swa
     "next": null,
     "previous": null,
     "results": []
-    })
-
-    
+    })    
 
     useEffect(() => {  
         const getData = async () => {               

@@ -1,0 +1,14 @@
+@import "../styles/fonts.scss";
+
+header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: "distant-galaxy", sans-serif;
+    font-size: 24px;
+
+    img {
+        width: 60%;
+    }
+}

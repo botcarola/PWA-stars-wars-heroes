@@ -1,24 +1,23 @@
 import Card from "./Card"
 import { ContainerCardsProps } from "../interface/ContainerCardsProps";
 import { Person } from "../interface/swapiResponse";
+import "../styles/ContainerCards.scss"
 
 const ContainerCards = ({ data }: ContainerCardsProps ): JSX.Element => {
     
     return (
-        <section>
-            <h2>
-                Characters
-            </h2>     
+        <section className="container-cards">              
             {
                 data?.results?.length ?
-                <div>
+                <div className="cards">
                     {
-                        data.results.map(( character: Person ) => (
-                            <Card 
+                        data.results.map(( character: Person, index: number ) => (
+                            <Card                             
+                            key={index}                        
                             name={character.name}
                             gender={character.gender}
                             height={character.height}
-                            mass={character.mass}                           
+                            mass={character.mass}   
                             />
                         ))
                     }

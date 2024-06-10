@@ -18,28 +18,41 @@ const Card = ({ name, gender, height, mass }: CardProps): JSX.Element => {
     }
 
     return (
-        <article>
-            <h2>
+        <article className="card">
+            <div className="container-img">
+                <img src={getCharacterImage(name)?.image || notFound} alt={name} />
+            </div>
+            <h2 className="subtitle-card">
                 {
                     name
                 }
             </h2>
-            <h3>
-                {
-                    gender
-                }
-            </h3>
-            <h4>
-                {
-                    height
-                }
-            </h4>
-            <h4>
-                {
-                    mass
-                }
-            </h4>
-            <img src={getCharacterImage(name)?.image || notFound} alt={name} />
+            <div className="container-info">
+                <div className="info-character">
+                    <p className="bold-subtitle">
+                        Gender
+                    </p>
+                    <p>
+                        { gender }
+                    </p>
+                </div>
+                <div className="info-character">
+                    <p className="bold-subtitle">
+                        Height
+                    </p>
+                    <p>
+                        { height }
+                    </p>
+                </div>
+                <div className="info-character">
+                    <p className="bold-subtitle">
+                        Mass
+                    </p>
+                    <p>
+                        { mass }
+                    </p>
+                </div>
+            </div>
         </article>
     )
 }
