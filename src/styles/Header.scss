@@ -1,14 +1,43 @@
 @import "../styles/fonts.scss";
+@import "../styles/mixins.scss";
+@import "../styles/variables.scss";
 
 header {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    font-family: "distant-galaxy", sans-serif;
-    font-size: 24px;
+    font-family: "distant-galaxy", sans-serif;    
 
-    img {
-        width: 60%;
+    .header-img {
+        width: 40%;
+        @include notebook() {
+            width: 50%;
+        }
+
+        @include tablet() {
+            width: 60%;
+        }
+
+        @include mobile() {
+            width: 70%;
+        }
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        color: $tertiary-color;
+        @include notebook() {
+            font-size: 1.6;
+        }
+
+        @include tablet() {
+            font-size: 1.4rem;
+        }
+
+        @include mobile() {
+            font-size: 1.2rem;
+        }
     }
 }
+

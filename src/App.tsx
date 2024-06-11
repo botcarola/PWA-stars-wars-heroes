@@ -3,6 +3,7 @@ import './App.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Error from './components/Error.tsx';
 import Home from './components/Home.tsx';
+import Footer from './components/Footer.tsx';
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/*" element={<Error />} />
       </Routes>
+      <Footer />
       <PWABadge />
     </BrowserRouter>
   )

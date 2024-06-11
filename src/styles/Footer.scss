@@ -1,0 +1,22 @@
+@import "../styles/functions.scss";
+@import "../styles/variables.scss";
+
+footer {    
+    @include flexbox(row, center, center, wrap);
+    background-color: $tertiary-color;       
+
+    .social-media-list {       
+        padding: 0;
+        @include flexbox(row, space-around, center, nowrap);
+        font-size: 25px;        
+    }
+
+    a {
+        color: $primary-text;
+        margin-right: 10px;
+    }
+
+    a:hover {
+        color: rgb(63, 63, 63)
+    }
+}

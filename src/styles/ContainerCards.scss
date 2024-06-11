@@ -1,11 +1,19 @@
-.container-cards {
-    display: flex;
-    justify-content: center;
+@import "../styles/functions.scss";
+@import "../styles/mixins.scss";
 
-    .cards {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 80%;
+.container-cards {    
+    @include flexbox(row, center, center, nowrap);
+
+    .cards {        
+        @include flexbox(row, center, center, wrap);
+        width: 75%;
+
+        @include notebook() {
+            width: 85%;
+        }
+
+        @include tablet() {
+            width: 90%;
+        }
     }
 }

@@ -4,4 +4,9 @@ body {
   background-image: url("./assets/starfield.jpg");
   background-repeat: repeat;
   font-family: $primary-font;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
 }

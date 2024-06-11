@@ -4,7 +4,7 @@ import "../styles/Header.scss";
 const Header = (): JSX.Element => {
     return (
         <header>
-            <img src={logo} alt={"star wars logo"} /> 
+            <img className="header-img" src={logo} alt={"star wars logo"} /> 
             <h2>
                 CHARACTERS FINDER
             </h2>

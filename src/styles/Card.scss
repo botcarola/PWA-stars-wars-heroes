@@ -1,19 +1,33 @@
 @import "../styles/variables.scss";
+@import "../styles/mixins.scss";
+@import "../styles/functions.scss";
 
 .card {
     border: 1px solid $border-color;
-    border-radius: 26px 3px 24px 3px;    
-    background-color: rgb(253, 253, 253);
+    border-radius: 26px 3px 24px 3px;   
     color: rgb(26, 26, 26);
     padding: 5px;
-    background: linear-gradient(to bottom, #fee91f 65%, #ffffff 35%);
+    background: linear-gradient(to bottom, $primary-color 65%, $tertiary-color 35%);
     margin: 20px; 
-    box-shadow: rgba(255, 255, 255, 0.3) 0px 3px 6px, rgba(255, 255, 255, 0.3) 0px 3px 6px;
+    box-shadow: $primary-shadow;
     transition: transform 0.5s ease;    
 
     .subtitle-card {
         text-align: center;
         margin: 0;
+        font-size: 1.5rem;
+
+        @include notebook() {
+            font-size: 1.4rem;
+        }
+
+        @include tablet() {
+            font-size: 1.3rem;
+        }
+
+        @include mobile() {
+            font-size: 1.2rem;
+        }
     }
 
     .container-info {
@@ -23,11 +37,8 @@
         height: 40px;
         padding: 20px 0px;
 
-        .info-character {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        .info-character {            
+            @include flexbox(column, center, center, nowrap)
         }
 
         p {
@@ -37,15 +48,30 @@
         .bold-subtitle {
             font-weight: bold;
         }
+
+        .subtitle-type-info {
+            font-size: 1rem;
+        }
+
     }
 
     .container-img {
-        width: 250px;
-        height: 300px;
+        width: 200px;
+        height: 240px;
         border-radius: 50%;
         object-fit: cover;
         overflow: hidden;
         background-color: black;
+
+        @include notebook() {
+            width: 180px;
+            height: 230px;
+        }
+
+        @include tablet() {
+            width: 170px;
+            height: 220px;
+        }
     }
 
     .container-img img {

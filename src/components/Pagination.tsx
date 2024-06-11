@@ -1,6 +1,7 @@
 import "../styles/Pagination.scss";
+import { PaginationProps } from "../interface/PaginationProps";
 
-const Pagination = (): JSX.Element => {
+const Pagination = ({ setIndexPagination, indexPagination, totalCharacters }: PaginationProps): JSX.Element => {
 
     const scrollToTop = () => {
         window.scrollTo({
@@ -10,11 +11,17 @@ const Pagination = (): JSX.Element => {
     }
 
     const handleClickNext = () => {
-        scrollToTop()
+        if ( indexPagination < totalCharacters / 10 ) {
+            setIndexPagination((prev: number) => prev + 1)
+            scrollToTop()
+        }
     }
 
     const handleClickPrev = () => {
-        scrollToTop()
+        if (indexPagination > 1) {
+            setIndexPagination((prev: number) => prev - 1)
+            scrollToTop()
+        }
     }
 
     return (

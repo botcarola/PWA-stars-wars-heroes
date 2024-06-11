@@ -14,10 +14,12 @@ const useFetch = ( resource: string, indexPagination: number = 1 ): { data : swa
     })    
 
     useEffect(() => {  
-        const getData = async () => {               
+        const getData = async () => {
+            setLoader(true)               
             try {
                 const info = await getDataCharacter(`https://swapi.dev/api/${resource}/?page=${indexPagination}`)
-                setData(info)                
+                setData(info) 
+                setLoader(false)               
             } catch ( error ) {
                 navigate("/*")
             } finally {

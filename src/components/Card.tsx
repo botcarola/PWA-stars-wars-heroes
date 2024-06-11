@@ -23,13 +23,11 @@ const Card = ({ name, gender, height, mass }: CardProps): JSX.Element => {
                 <img src={getCharacterImage(name)?.image || notFound} alt={name} />
             </div>
             <h2 className="subtitle-card">
-                {
-                    name
-                }
+                { name }
             </h2>
             <div className="container-info">
                 <div className="info-character">
-                    <p className="bold-subtitle">
+                    <p className="bold-subtitle subtitle-type-info">
                         Gender
                     </p>
                     <p>
