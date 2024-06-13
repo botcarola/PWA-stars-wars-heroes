@@ -1,3 +1,19 @@
+## Progressive Web App (PWA) with Vite
+
+This project is configured as a Progressive Web App (PWA) using Vite. The PWA capabilities enable offline access and improved performance through caching strategies.
+
+### PWA Configuration
+
+To take full advantage of the PWA features:
+
+1. **Service Worker**: Configure a Service Worker to cache assets and provide offline support. Use strategies like `CacheFirst` or `NetworkFirst` from Workbox to optimize resource loading.
+
+2. **Manifest Configuration**: The manifest.json configuration is managed in the `vite.config.ts` file. Ensure your Vite configuration includes the necessary settings for your app's metadata, such as its name, icons, and theme colors, to ensure a native-like experience.
+
+3. **Offline Access**: Ensure critical assets and data are cached so that users can access your app even without an internet connection. Implement fallback strategies for network requests to maintain functionality.
+
+By leveraging these PWA capabilities, your application can deliver a reliable and engaging experience to users across various devices and network conditions.
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -23,19 +39,3 @@ export default {
     tsconfigRootDir: __dirname,
   },
 }
-
-## Progressive Web App (PWA) with Vite
-
-This project is configured as a Progressive Web App (PWA) using Vite. The PWA capabilities enable offline access and improved performance through caching strategies.
-
-### PWA Configuration
-
-To take full advantage of the PWA features:
-
-1. **Service Worker**: Configure a Service Worker to cache assets and provide offline support. Use strategies like `CacheFirst` or `NetworkFirst` from Workbox to optimize resource loading.
-
-2. **Manifest Configuration**: The manifest.json configuration is managed in the `vite.config.ts` file. Ensure your Vite configuration includes the necessary settings for your app's metadata, such as its name, icons, and theme colors, to ensure a native-like experience.
-
-3. **Offline Access**: Ensure critical assets and data are cached so that users can access your app even without an internet connection. Implement fallback strategies for network requests to maintain functionality.
-
-By leveraging these PWA capabilities, your application can deliver a reliable and engaging experience to users across various devices and network conditions.
