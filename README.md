@@ -1,4 +1,4 @@
-## Progressive Web App (PWA) with Vite
+# Progressive Web App (PWA) with Vite
 
 This project is configured as a Progressive Web App (PWA) using Vite. The PWA capabilities enable offline access and improved performance through caching strategies.
 
