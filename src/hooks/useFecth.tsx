@@ -18,8 +18,7 @@ const useFetch = ( resource: string, indexPagination: number = 1 ): { data : swa
             setLoader(true)               
             try {
                 const info = await getDataCharacter(`https://swapi.dev/api/${resource}/?page=${indexPagination}`)
-                setData(info) 
-                setLoader(false)               
+                setData(info)                                
             } catch ( error ) {
                 navigate("/*")
             } finally {
@@ -32,6 +31,5 @@ const useFetch = ( resource: string, indexPagination: number = 1 ): { data : swa
 
     return { data, loader } 
 }
-
 
 export default useFetch;

@@ -1,26 +1,54 @@
-/// <reference lib="webworker" />
-import { cleanupOutdatedCaches, createHandlerBoundToURL, precacheAndRoute } from 'workbox-precaching'
-import { clientsClaim } from 'workbox-core'
-import { NavigationRoute, registerRoute } from 'workbox-routing'
+// sw.js
+import { registerRoute, Route } from 'workbox-routing';
+import { CacheFirst, StaleWhileRevalidate } from 'workbox-strategies';
+import { NetworkFirst } from 'workbox-strategies';
+import { CacheableResponsePlugin } from 'workbox-cacheable-response';
+import { precacheAndRoute } from 'workbox-precaching';
 
-declare let self: ServiceWorkerGlobalScope
+declare let self: ServiceWorkerGlobalScope;
 
-// self.__WB_MANIFEST is the default injection point
-precacheAndRoute(self.__WB_MANIFEST)
+// Precache resources defined in self.__WB_MANIFEST
+precacheAndRoute(self.__WB_MANIFEST);
+self.__WB_MANIFEST
 
-// clean old assets
-cleanupOutdatedCaches()
 
-let allowlist: RegExp[] | undefined
-// in dev mode, we disable precaching to avoid caching issues
-if (import.meta.env.DEV)
-  allowlist = [/^\/$/]
+// Handle images:
+const imageRoute = new Route(({ request }) => {
+  return request.destination === 'image'
+}, new StaleWhileRevalidate({
+  cacheName: 'images'
+}))
 
-// to allow work offline
-registerRoute(new NavigationRoute(
-  createHandlerBoundToURL('index.html'),
-  { allowlist },
-))
+// Handle scripts:
+const scriptsRoute = new Route(({ request }) => {
+  return request.destination === 'script';
+}, new CacheFirst({
+  cacheName: 'scripts'
+}))
 
-self.skipWaiting()
-clientsClaim()
+// Handle styles:
+const stylesRoute = new Route(({ request }) => {
+  return request.destination === 'style';
+}, new CacheFirst({
+  cacheName: 'styles'
+}))
+
+const apiRoute = new Route(
+  ({ request }) => request.url.startsWith('/api/'), // Match requests starting with /api/
+  new NetworkFirst({
+    cacheName: 'api-cache',
+    plugins: [
+      new CacheableResponsePlugin({
+        statuses: [200, 201], // Cache successful responses (OK, Created)
+      }),
+    ],
+  })
+)
+
+// Register routes
+registerRoute(imageRoute)
+registerRoute(scriptsRoute)
+registerRoute(stylesRoute)
+registerRoute(apiRoute)
+
+

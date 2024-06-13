@@ -3,7 +3,8 @@
 
 footer {    
     @include flexbox(row, center, center, wrap);
-    background-color: $tertiary-color;       
+    background-color: $tertiary-color;  
+    padding: 10px;     
 
     .social-media-list {       
         padding: 0;
@@ -13,7 +14,7 @@ footer {
 
     a {
         color: $primary-text;
-        margin-right: 10px;
+        margin: 20px;
     }
 
     a:hover {

@@ -1,5 +1,5 @@
 import PWABadge from './PWABadge.tsx';
-import './App.scss';
+import './styles/App.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Error from './components/Error.tsx';
 import Home from './components/Home.tsx';

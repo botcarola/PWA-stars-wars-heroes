@@ -14,7 +14,7 @@ const ContainerCards = ({ data, loader }: ContainerCardsProps ): JSX.Element => 
                     <Loader />
                 </div>
                 :
-                <div className="cards">
+                <section className="cards">
                     {
                         data.results.map(( character: Person, index: number ) => (
                             <Card                             
@@ -26,8 +26,7 @@ const ContainerCards = ({ data, loader }: ContainerCardsProps ): JSX.Element => 
                             />
                         ))
                     }
-                </div>
-                
+                </section>                
             }  
         </section>
     )

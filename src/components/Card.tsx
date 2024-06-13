@@ -11,16 +11,19 @@ interface imagesType {
 
 const Card = ({ name, gender, height, mass }: CardProps): JSX.Element => {
 
-    const getCharacterImage = (name: string): imagesType | undefined => {
+    const getCharacterImage = (name: string): imagesType | undefined => {        
         return images.find((image: imagesType) => {
             return image.name.toLowerCase().includes(name.toLowerCase())
         })
-    }
+    }    
 
     return (
         <article className="card">
             <div className="container-img">
-                <img src={getCharacterImage(name)?.image || notFound} alt={name} />
+                <img 
+                src={getCharacterImage(name)?.image || notFound} 
+                alt={name}                 
+                />
             </div>
             <h2 className="subtitle-card">
                 { name }

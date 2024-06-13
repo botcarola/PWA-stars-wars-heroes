@@ -1,0 +1,11 @@
+@import "../styles/functions.scss";
+
+.container-loader {
+    margin: 0px 0px;
+    min-height: 60vh;
+    @include flexbox(row, center, center, nowrap);    
+
+    img {
+        width: 100%;
+    }
+}

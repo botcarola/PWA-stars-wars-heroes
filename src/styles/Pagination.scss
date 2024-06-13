@@ -1,10 +1,9 @@
 @import "../styles/functions.scss";
 @import "../styles/variables.scss";
 
-
 .container-pagination {
     @include flexbox(row, center, center, nowrap);
-    margin: 20px 0px;
+    margin: 20px 0px;    
 
     button {
         margin: 20px;
@@ -12,14 +11,14 @@
         padding: 10px;
         font-size: 1rem;
         background-color: $primary-color;
-        font-weight: 600;
+        font-weight: 400;
         box-shadow: $primary-shadow;
-        border: 1px solid $secondary-color;
-        border-radius: 10px;        
+        border: 1px solid $tertiary-color;
+        border-radius: 10px;  
+        font-family: $primary-font;     
     }
 
-    button:hover {
-        border: 1px solid $primary-color;
+    button:hover {        
         background-color: $secondary-color;
     }
 }

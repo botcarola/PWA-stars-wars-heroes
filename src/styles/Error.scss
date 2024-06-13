@@ -1,0 +1,40 @@
+@import "../styles/functions.scss";
+@import "../styles/variables.scss";
+@import "../styles/fonts.scss";
+@import "../styles/mixins.scss";
+
+.container-error {        
+    font-family: "distant-galaxy", sans-serif; 
+    @include flexbox(column, space-evenly, center, nowrap);   
+    color: $tertiary-color;
+    height: 90vh;
+    
+    h2 {
+        font-size: 3rem;
+        letter-spacing: 5px;
+        text-align: center;
+        @include mobile() {
+            font-size: 2rem;
+        }
+    }  
+
+    h3 {
+        font-size: 1.5rem;
+        @include mobile() {
+            font-size: 1.2rem;
+        }
+    }
+
+    a {
+        background-color: $primary-color;
+        padding: 20px;
+        border: 1px solid $tertiary-color;
+        border-radius: 10px;
+        text-decoration: none;
+        color: $primary-text;
+    }
+
+    a:hover {
+        background-color: $secondary-color;
+    }
+}
