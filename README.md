@@ -34,7 +34,7 @@ To take full advantage of the PWA features:
 
 1. **Service Worker**: Configure a Service Worker to cache assets and provide offline support. Use strategies like `CacheFirst` or `NetworkFirst` from Workbox to optimize resource loading.
 
-2. **Manifest File**: Create a `manifest.json` file to define your app's metadata, such as its name, icons, and theme colors. This file helps in installing the app on a user's device and ensures a native-like experience.
+2. **Manifest Configuration**: The manifest.json configuration is managed in the `vite.config.ts` file. Ensure your Vite configuration includes the necessary settings for your app's metadata, such as its name, icons, and theme colors, to ensure a native-like experience.
 
 3. **Offline Access**: Ensure critical assets and data are cached so that users can access your app even without an internet connection. Implement fallback strategies for network requests to maintain functionality.
 
