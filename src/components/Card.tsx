@@ -1,13 +1,8 @@
 import "../styles/Card.scss";
 import { CardProps } from "../interface/CardProps";
+import { imagesType } from "../interface/ImageType";
 import images from "../images.json";
 import notFound from "../assets/image-not-found.png";
-
-interface imagesType {
-    id: number;
-    name: string;
-    image: string;
-}
 
 const Card = ({ name, gender, height, mass }: CardProps): JSX.Element => {
 

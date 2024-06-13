@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "/",
   plugins: [react(), VitePWA({
     strategies: 'injectManifest',
     srcDir: 'src',   
@@ -25,8 +26,8 @@ export default defineConfig({
 
     injectManifest: {
       globPatterns: ['**/*.{js,css,html,svg,png,ico}'],
-      swSrc: './src/sw.ts', // archivo fuente del Service Worker
-      swDest: './dist/sw.js', // archivo de salida del Service Worker
+      swSrc: './src/sw.ts', // archivo fuente del service sorker
+      swDest: './dist/sw.js', // archivo de salida del service worker
     },
 
     devOptions: {

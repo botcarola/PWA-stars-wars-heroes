@@ -1,6 +1,6 @@
-import deathStar from "../assets/Death-Star.png";
 import "../styles/Error.scss";
 import { Link } from "react-router-dom";
+import deathStar from "../assets/Death-Star.png";
 
 const Error = (): JSX.Element => {
     return (

@@ -1,5 +1,5 @@
-import gifLoader from "../assets/loader.gif";
 import "../styles/Loader.scss";
+import gifLoader from "../assets/loader.gif";
 
 const Loader = (): JSX.Element => {
     return (

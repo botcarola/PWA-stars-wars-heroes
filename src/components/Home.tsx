@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import useFetch from "../hooks/useFecth";
+import useGetData from "../hooks/useGetData";
 import ContainerCards from "./ContainerCards";
 import Header from "./Header";
 import Pagination from "./Pagination";
@@ -7,17 +7,15 @@ import SearchCharacter from "./SearchCharacter";
 
 const Home = (): JSX.Element => {
     const [ index, setIndex ] = useState(1)
-    const [ searchCriteria, setSearchCriteria ] = useState("")
-    const results = useFetch("/people", index)
-    console.log(results)
+    const [ searchCharacter, setSearchCharacter ] = useState("")
+    const results = useGetData("people", index, searchCharacter)    
     const totalCharactersRef = useRef<number>(0)
-    totalCharactersRef.current = results?.data?.count || 0
-    console.log(searchCriteria)
+    totalCharactersRef.current = results?.data?.count || 0    
 
     return (
         <>
             <Header />
-            <SearchCharacter setSearchTerm={setSearchCriteria} />
+            <SearchCharacter setSearchTerm={setSearchCharacter} />
             <ContainerCards
             data={results.data}
             loader={results.loader}

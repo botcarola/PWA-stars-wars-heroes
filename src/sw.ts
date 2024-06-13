@@ -24,6 +24,18 @@ const stylesRoute = new Route(({ request }) => {
   cacheName: 'styles'
 }))
 
+// Handle fonts:
+const fontsRoute = new Route(({ request }) => {
+  return request.destination === 'font';
+}, new CacheFirst({
+  cacheName: 'fonts',
+  plugins: [
+    new CacheableResponsePlugin({
+      statuses: [0, 200], 
+    }),
+  ],
+}))
+
 const apiRoute = new Route(
   ({ request }) => request.url.startsWith('/api/'), // Match requests starting with /api/
   new NetworkFirst({
@@ -40,5 +52,5 @@ const apiRoute = new Route(
 registerRoute(scriptsRoute)
 registerRoute(stylesRoute)
 registerRoute(apiRoute)
-
+registerRoute(fontsRoute)
 

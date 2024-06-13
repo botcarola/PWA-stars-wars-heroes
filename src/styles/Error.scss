@@ -4,7 +4,7 @@
 @import "../styles/mixins.scss";
 
 .container-error {        
-    font-family: "distant-galaxy", sans-serif; 
+    font-family: $secondary-font; 
     @include flexbox(column, space-evenly, center, nowrap);   
     color: $tertiary-color;
     height: 90vh;

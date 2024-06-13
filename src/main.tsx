@@ -2,6 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 
+// local path to sw: "../dist/sw.js"
+// production path to sw: "sw.js"
+
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register("sw.js")

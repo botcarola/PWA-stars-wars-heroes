@@ -10,6 +10,16 @@ const Pagination = ({ setIndexPagination, indexPagination, totalCharacters }: Pa
         })
     }
 
+    const handleClickFirstPage = () => {
+        setIndexPagination(1)
+        scrollToTop()
+    }
+
+    const handleClickLastPage = () => {
+        setIndexPagination(Math.ceil(totalCharacters / 10))
+        scrollToTop()
+    }
+
     const handleClickNext = () => {
         if ( indexPagination < totalCharacters / 10 ) {
             setIndexPagination((prev: number) => prev + 1)
@@ -26,11 +36,17 @@ const Pagination = ({ setIndexPagination, indexPagination, totalCharacters }: Pa
 
     return (
         <div className="container-pagination">
+            <button onClick={handleClickFirstPage} className="first-last-button">
+                {"<"}
+            </button>
             <button onClick={handleClickPrev}>
                 prev
             </button>
             <button onClick={handleClickNext}>
                 next
+            </button>
+            <button onClick={handleClickLastPage} className="first-last-button">
+                {">"}
             </button>
         </div>
     )

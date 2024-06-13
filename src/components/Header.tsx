@@ -1,5 +1,5 @@
-import logo from "../assets/sw-logo.png";
 import "../styles/Header.scss";
+import logo from "../assets/sw-logo.png";
 
 const Header = (): JSX.Element => {
     return (
