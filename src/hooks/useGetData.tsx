@@ -2,9 +2,8 @@ import { useState, useEffect } from "react";
 import { swapiCharacterResponse } from "../interface/swapiResponse";
 import { getDataCharacter } from "../utils/fetchHelper";
 import { useNavigate } from "react-router-dom";
-import { ContainerCardsProps } from "../interface/ContainerCardsProps";
 
-const useGetData = ( resource: string, indexPagination: number = 1, character: string ): ContainerCardsProps => {
+const useGetData = ( resource: string, indexPagination: number = 1, character: string ): { data: swapiCharacterResponse, loader: boolean } => {
     const navigate = useNavigate()
     const [loader, setLoader] = useState<boolean>(true)
     const [data, setData] = useState<swapiCharacterResponse>({
