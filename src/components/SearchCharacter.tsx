@@ -2,15 +2,15 @@ import { useState, ChangeEvent, FormEvent } from 'react';
 import { SearchCharacterProps } from '../interface/SearchCharacterProps';
 
 const SearchCharacter = ({ setSearchTerm }: SearchCharacterProps): JSX.Element => {
-    const [inputValue, setInputValue] = useState<string>('');
+    const [ inputValue, setInputValue ] = useState<string>('')
 
     const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-        setInputValue(event.target.value);
+        setInputValue(event.target.value)
     }
 
     const handleSubmit = ( event: FormEvent<HTMLFormElement> ) => {
-        event.preventDefault();
-        setSearchTerm(inputValue);
+        event.preventDefault()
+        setSearchTerm(inputValue)
     }
 
     return (

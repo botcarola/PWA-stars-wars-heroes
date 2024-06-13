@@ -1,34 +1,25 @@
-// sw.js
 import { registerRoute, Route } from 'workbox-routing';
-import { CacheFirst, StaleWhileRevalidate } from 'workbox-strategies';
+import { CacheFirst } from 'workbox-strategies';
 import { NetworkFirst } from 'workbox-strategies';
 import { CacheableResponsePlugin } from 'workbox-cacheable-response';
 import { precacheAndRoute } from 'workbox-precaching';
 
-declare let self: ServiceWorkerGlobalScope;
+declare let self: ServiceWorkerGlobalScope
 
 // Precache resources defined in self.__WB_MANIFEST
-precacheAndRoute(self.__WB_MANIFEST);
+precacheAndRoute(self.__WB_MANIFEST)
 self.__WB_MANIFEST
-
-
-// Handle images:
-const imageRoute = new Route(({ request }) => {
-  return request.destination === 'image'
-}, new StaleWhileRevalidate({
-  cacheName: 'images'
-}))
 
 // Handle scripts:
 const scriptsRoute = new Route(({ request }) => {
-  return request.destination === 'script';
+  return request.destination === 'script'
 }, new CacheFirst({
   cacheName: 'scripts'
 }))
 
 // Handle styles:
 const stylesRoute = new Route(({ request }) => {
-  return request.destination === 'style';
+  return request.destination === 'style'
 }, new CacheFirst({
   cacheName: 'styles'
 }))
@@ -46,7 +37,6 @@ const apiRoute = new Route(
 )
 
 // Register routes
-registerRoute(imageRoute)
 registerRoute(scriptsRoute)
 registerRoute(stylesRoute)
 registerRoute(apiRoute)
