@@ -23,8 +23,19 @@ export default {
     tsconfigRootDir: __dirname,
   },
 }
-```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Progressive Web App (PWA) with Vite
+
+This project is configured as a Progressive Web App (PWA) using Vite. The PWA capabilities enable offline access and improved performance through caching strategies.
+
+### PWA Configuration
+
+To take full advantage of the PWA features:
+
+1. **Service Worker**: Configure a Service Worker to cache assets and provide offline support. Use strategies like `CacheFirst` or `NetworkFirst` from Workbox to optimize resource loading.
+
+2. **Manifest File**: Create a `manifest.json` file to define your app's metadata, such as its name, icons, and theme colors. This file helps in installing the app on a user's device and ensures a native-like experience.
+
+3. **Offline Access**: Ensure critical assets and data are cached so that users can access your app even without an internet connection. Implement fallback strategies for network requests to maintain functionality.
+
+By leveraging these PWA capabilities, your application can deliver a reliable and engaging experience to users across various devices and network conditions.
