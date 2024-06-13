@@ -5,7 +5,7 @@ import Card from "./Card";
 import Loader from "./Loader";
 import NoData from "./NoData";
 
-const ContainerCards = ({ data, loader }: ContainerCardsProps ): JSX.Element => {
+const ContainerCards = ({ data, loader, searchCharacter }: ContainerCardsProps ): JSX.Element => {
     
     return (
         <section className="container-cards">              
@@ -28,7 +28,9 @@ const ContainerCards = ({ data, loader }: ContainerCardsProps ): JSX.Element => 
                             />
                         ))
                         :
-                        <NoData />
+                        <NoData 
+                        setSearchTerm={searchCharacter}
+                        />
                     }
                 </section>                
             }  

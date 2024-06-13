@@ -21,4 +21,18 @@
             width: 200px;
         }
     }
+
+    button {
+        margin: 30px 0px 0px 0px;
+        padding: 5px;
+        font-size: 1rem;
+        background-color: $secondary-color;
+        border: 1px solid $tertiary-color;
+        font-family: $primary-font;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        background-color: $primary-color;
+    }
 }

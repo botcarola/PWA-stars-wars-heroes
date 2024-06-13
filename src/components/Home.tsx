@@ -19,6 +19,7 @@ const Home = (): JSX.Element => {
             <ContainerCards
             data={results.data}
             loader={results.loader}
+            searchCharacter={setSearchCharacter}
             />
             <Pagination 
             setIndexPagination={setIndex}
